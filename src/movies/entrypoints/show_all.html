@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang = "en">
+   <head></head>
+   <body onload="load()">
+      
+      <h3>
+         Hello {{username}} !
+      </h3>
+      
+      <hr/>
+		
+      <button onclick="myFunction()">Toggle Rating</button>
+
+      <h3>Movies</h3>
+      
+      <div id = "myTable">
+         <table>
+            <thead>
+               <h3> Highest to Lowest Rating </h3>
+               <tr>
+                  <th>Preference Key</th>
+                  <th>Movie ID</th>
+                  <th>Cast</th>
+                  <th>Rating</th>
+                  <th>Year</th>
+                  <th>Place</th>
+                  <th>link</th>
+               </tr>
+            </thead>
+            
+            <tbody>
+               {% for movie in movielistTop %}
+                  <tr>
+                     <td>{{ movie['preference_key'] }}</td>
+                     <td>{{ movie['movie_title'] }}</td>
+                     <td>{{ movie['star_cast'] }}</td>
+                     <td>{{ movie['rating'] }}</td>
+                     <td>{{ movie['year'] }}</td>
+                     <td>{{ movie['place'] }}</td>
+                     <td>{{ movie['link'] }}</td>
+                  </tr>
+               {% endfor %}
+            </tbody>
+         </table>
+      </div>
+      
+      <div id = "myTableAsc">
+         <table>
+            <thead>
+               <h3> Lowest to Highest Rating </h3>
+               <tr>
+                  <th>Preference Key</th>
+                  <th>Movie ID</th>
+                  <th>Cast</th>
+                  <th>Rating</th>
+                  <th>Year</th>
+                  <th>Place</th>
+                  <th>link</th>
+               </tr>
+            </thead>
+            
+            <tbody>
+               {% for movie in movielistLow %}
+                  <tr>
+                     <td>{{ movie['preference_key'] }}</td>
+                     <td>{{ movie['movie_title'] }}</td>
+                     <td>{{ movie['star_cast'] }}</td>
+                     <td>{{ movie['rating'] }}</td>
+                     <td>{{ movie['year'] }}</td>
+                     <td>{{ movie['place'] }}</td>
+                     <td>{{ movie['link'] }}</td>
+                  </tr>
+               {% endfor %}
+            </tbody>
+         </table>
+      </div>
+
+      <script>
+         function myFunction() {
+           var x = document.getElementById("myTable");
+           var y = document.getElementById("myTableAsc");
+           
+           if (x.style.display === "none") {
+             x.style.display = "block";
+             y.style.display = "none";
+           } else {
+             x.style.display = "none";
+             y.style.display = "block";
+           }
+         }
+
+         function load() {
+            var y = document.getElementById("myTableAsc");
+            y.style.display = "none";
+         }
+
+      </script>
+
+   </body>
+</html>

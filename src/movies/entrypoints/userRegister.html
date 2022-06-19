@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+   <body>
+    <form action="{{ url_for("register")}}" method="post">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" placeholder="username">
+        <label for="password">Password:</label>
+        <input type="text" id="password" name="password" placeholder="password"><br>
+        <input type="checkbox" id="value1" name="value1" value=1>
+        <label for="vehicle1"> Comedy </label><br>
+        <input type="checkbox" id="value2" name="value2" value=2>
+        <label for="vehicle2"> Drama </label><br>
+        <input type="checkbox" id="value3" name="value3" value=3>
+        <label for="vehicle3"> Sci-Fi </label><br>
+        <input type="checkbox" id="value3" name="value4" value=4>
+        <label for="vehicle3"> Romantic </label><br>
+        <input type="checkbox" id="value3" name="value5" value=5>
+        <label for="vehicle3"> Adventure </label><br>
+        <button type="submit">Create User</button><br>
+    </form>
+   </body>
+</html>
